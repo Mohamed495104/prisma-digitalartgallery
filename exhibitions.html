@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exhibitions - Prisma Digital Art Gallery</title>
+    <link rel="icon" href="img/favicon.png" type="image/x-icon">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;700&family=Playfair+Display:wght@400;600;700&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+    <header>
+        <div class="logo">
+            <h1>PRISMA</h1>
+            <p class="tagline">Digital Art Gallery</p>
+        </div>
+        <nav>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="exhibitions.html" class="active">Exhibitions</a></li>
+                <li><a href="artists.html">Artists</a></li>
+            </ul>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section class="exhibitions-hero">
+            <div class="hero-content">
+                <h2>Current & Upcoming Exhibitions</h2>
+                <p>Experience the evolution of digital art through our curated exhibitions</p>
+            </div>
+        </section>
+
+        <section class="exhibition-filters">
+            <div class="filter-buttons">
+                <button class="filter-btn active" data-filter="all">All Exhibitions</button>
+                <button class="filter-btn" data-filter="current">Current</button>
+                <button class="filter-btn" data-filter="upcoming">Upcoming</button>
+                <button class="filter-btn" data-filter="past">Past</button>
+            </div>
+        </section>
+
+        <section class="exhibitions-grid">
+            <div class="exhibition-card current">
+                <div class="exhibition-image">
+                    <img src="img/art7.jpg"
+                        alt="Futuristic Digital Art">
+                    <span class="status-badge">Current</span>
+                </div>
+                <div class="exhibition-details">
+                    <h3>Pixels of the Future</h3>
+                    <p class="date">April 1 - May 30, 2025</p>
+                    <p class="description">An exploration of futuristic themes through digital art, showcasing works
+                        that imagine tomorrow's world.</p>
+                    <a href="#" class="btn btn-small">View Details</a>
+                </div>
+            </div>
+
+            <div class="exhibition-card current">
+                <div class="exhibition-image">
+                    <img src="img/art8.jpg"
+                        alt="Digital Landscape Art">
+                    <span class="status-badge">Current</span>
+                </div>
+                <div class="exhibition-details">
+                    <h3>Digital Horizons</h3>
+                    <p class="date">March 15 - May 15, 2025</p>
+                    <p class="description">Reimagining natural landscapes through digital techniques, blending reality
+                        with artistic vision.</p>
+                    <a href="#" class="btn btn-small">View Details</a>
+                </div>
+            </div>
+
+            <div class="exhibition-card upcoming">
+                <div class="exhibition-image">
+                    <img src="img/art9.jpg"
+                        alt="Digital Portrait Art">
+                    <span class="status-badge">Upcoming</span>
+                </div>
+                <div class="exhibition-details">
+                    <h3>The Digital Renaissance</h3>
+                    <p class="date">May 15 - July 20, 2025</p>
+                    <p class="description">A retrospective look at the evolution of digital art from the 1990s to
+                        present day.</p>
+                    <a href="#" class="btn btn-small">Notify Me</a>
+                </div>
+            </div>
+
+            <div class="exhibition-card upcoming">
+                <div class="exhibition-image">
+                    <img src="img/art10.jpg"
+                        alt="Geometric Digital Art">
+                    <span class="status-badge">Upcoming</span>
+                </div>
+                <div class="exhibition-details">
+                    <h3>AI-Generated Masterpieces</h3>
+                    <p class="date">June 8 - August 15, 2025</p>
+                    <p class="description">Exploring the frontier of artificial intelligence in contemporary art
+                        creation.</p>
+                    <a href="#" class="btn btn-small">Notify Me</a>
+                </div>
+            </div>
+
+            <div class="exhibition-card upcoming">
+                <div class="exhibition-image">
+                    <img src="img/art11.jpg">
+                    <span class="status-badge">Upcoming</span>
+                </div>
+                <div class="exhibition-details">
+                    <h3>Virtual Reality Experiences</h3>
+                    <p class="date">July 22 - September 30, 2025</p>
+                    <p class="description">Immersive art installations designed for virtual reality platforms.</p>
+                    <a href="#" class="btn btn-small">Notify Me</a>
+                </div>
+            </div>
+
+            <div class="exhibition-card past">
+                <div class="exhibition-image">
+                    <img src="img/art12.jpg" alt="Cyberpunk Art">
+                    <span class="status-badge">Past</span>
+                </div>
+                <div class="exhibition-details">
+                    <h3>Cyber Dreamscapes</h3>
+                    <p class="date">January 10 - March 5, 2025</p>
+                    <p class="description">Exploring cyberpunk aesthetics and dystopian visions through digital art.</p>
+                    <a href="#" class="btn btn-small">View Archive</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-column">
+                <h3>Prisma Gallery</h3>
+                <p>Showcasing innovative digital art since 2023</p>
+                <p>info@prismagallery.com</p>
+                <p>+1 (555) 123-4567</p>
+            </div>
+            <div class="footer-column">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="exhibitions.html">Exhibitions</a></li>
+                    <li><a href="artists.html">Artists</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h3>Stay Connected</h3>
+                <div class="social-links">
+                    <a href="#" class="social-icon">FB</a>
+                    <a href="#" class="social-icon">IG</a>
+                    <a href="#" class="social-icon">TW</a>
+                </div>
+                <p>Subscribe to our newsletter for updates</p>
+            </div>
+        </div>
+        <div class="copyright">
+            <p>&copy; 2025 Prisma Digital Art Gallery. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!--Reference to JavaScript file -->
+    <script src="script.js"></script>
+</body>
+
+</html>

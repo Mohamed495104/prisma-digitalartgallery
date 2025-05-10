@@ -1,0 +1,855 @@
+/* Base Styles and CSS Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    /* Color Palette */
+    --primary: #2c3e50;
+    --secondary: #3498db;
+    --accent: #e74c3c;
+    --light: #ecf0f1;
+    --dark: #1a252f;
+    --gray: #7f8c8d;
+    --overlay: rgba(44, 62, 80, 0.85);
+
+    /* Typography */
+    --heading-font: 'Playfair Display', serif;
+    --body-font: 'Montserrat', sans-serif;
+
+    /* Spacing */
+    --spacing-xs: 0.5rem;
+    --spacing-sm: 1rem;
+    --spacing-md: 2rem;
+    --spacing-lg: 4rem;
+    --spacing-xl: 8rem;
+
+    /* Border Radius */
+    --radius-sm: 3px;
+    --radius-md: 6px;
+    --radius-lg: 12px;
+}
+
+/* Fluid Typography */
+html {
+    font-size: calc(16px + 0.2vw);
+}
+
+body {
+    font-family: var(--body-font);
+    line-height: 1.6;
+    color: var(--dark);
+    background-color: var(--light);
+    overflow-x: hidden;
+    max-width: 100vw;
+}
+
+/* Typography */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: var(--heading-font);
+    font-weight: 700;
+    margin-bottom: var(--spacing-sm);
+    line-height: 1.2;
+}
+
+h1 {
+    font-size: calc(2rem + 1.5vw);
+}
+
+h2 {
+    font-size: calc(1.5rem + 1vw);
+    margin-bottom: var(--spacing-md);
+}
+
+h3 {
+    font-size: calc(1.2rem + 0.5vw);
+}
+
+p {
+    margin-bottom: var(--spacing-sm);
+}
+
+a {
+    color: var(--secondary);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+a:hover {
+    color: var(--accent);
+}
+
+/* Containers and Layout */
+main {
+    min-height: 100vh;
+}
+
+section {
+    padding: var(--spacing-lg) var(--spacing-md);
+    margin-bottom: var(--spacing-lg);
+}
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Header and Navigation */
+header {
+    background-color: var(--primary);
+    color: var(--light);
+    padding: var(--spacing-sm) var(--spacing-md);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.logo {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.logo h1 {
+    margin-bottom: 0;
+    font-size: calc(1.5rem + 0.5vw);
+    letter-spacing: 2px;
+}
+
+.tagline {
+    font-size: 0.8rem;
+    font-weight: 300;
+    letter-spacing: 1px;
+    margin-top: -5px;
+}
+
+nav {
+    display: flex;
+    align-items: center;
+}
+
+.nav-links {
+    display: flex;
+    list-style: none;
+}
+
+.nav-links li {
+    margin-left: var(--spacing-md);
+}
+
+.nav-links a {
+    color: var(--light);
+    font-weight: 500;
+    position: relative;
+    padding-bottom: 5px;
+}
+
+.nav-links a:after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    background-color: var(--accent);
+    transition: width 0.3s ease;
+}
+
+.nav-links a:hover:after,
+.nav-links a.active:after {
+    width: 100%;
+}
+
+.nav-links a.active {
+    color: var(--accent);
+}
+
+.hamburger {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+}
+
+.hamburger span {
+    width: 25px;
+    height: 3px;
+    background-color: var(--light);
+    margin: 3px 0;
+    transition: all 0.3s ease;
+}
+
+.hamburger.active span:nth-child(1) {
+    transform: rotate(45deg) translate(5px, 5px);
+}
+
+.hamburger.active span:nth-child(2) {
+    opacity: 0;
+}
+
+.hamburger.active span:nth-child(3) {
+    transform: rotate(-45deg) translate(7px, -6px);
+}
+
+/* Hero Sections */
+.hero {
+    height: 80vh;
+    background: linear-gradient(var(--overlay), var(--overlay)),
+        url("img/art4.jpg") no-repeat center center;
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: var(--light);
+    margin-bottom: var(--spacing-lg);
+}
+
+.exhibitions-hero,
+.artists-hero {
+    height: 50vh;
+    background: linear-gradient(var(--overlay), var(--overlay)),
+        url('img/art5.jpg') no-repeat center center;
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: var(--light);
+    margin-bottom: var(--spacing-md);
+}
+
+.artists-hero {
+    background-image: linear-gradient(var(--overlay), var(--overlay)),
+        url('img/art6.jpg');
+}
+
+.hero-content {
+    max-width: 800px;
+    padding: var(--spacing-md);
+}
+
+.hero-content h2 {
+    font-size: calc(2rem + 1.5vw);
+    margin-bottom: var(--spacing-sm);
+}
+
+.hero-content p {
+    font-size: calc(1rem + 0.3vw);
+    margin-bottom: var(--spacing-md);
+}
+
+/* Buttons */
+.btn {
+    display: inline-block;
+    padding: 0.8em 2em;
+    background-color: var(--secondary);
+    color: white;
+    border-radius: var(--radius-sm);
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: all 0.3s ease;
+    margin-top: var(--spacing-sm);
+    border: none;
+    cursor: pointer;
+}
+
+.btn:hover {
+    background-color: var(--accent);
+    color: white;
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.btn-secondary {
+    background-color: transparent;
+    border: 2px solid var(--secondary);
+    color: var(--secondary);
+}
+
+.btn-secondary:hover {
+    background-color: var(--secondary);
+    color: white;
+}
+
+.btn-small {
+    padding: 0.5em 1.2em;
+    font-size: 0.85rem;
+}
+
+/* Gallery Grid on Homepage */
+.featured-works {
+    text-align: center;
+    padding: var(--spacing-lg) var(--spacing-md);
+}
+
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--spacing-md);
+    margin: var(--spacing-md) 0;
+}
+
+.gallery-item {
+    position: relative;
+    overflow: hidden;
+    border-radius: var(--radius-md);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.gallery-item:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+}
+
+.artwork {
+    position: relative;
+    overflow: hidden;
+}
+
+.artwork img {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.gallery-item:hover .artwork img {
+    transform: scale(1.05);
+}
+
+.artwork-info {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: linear-gradient(transparent, rgba(0, 0, 0, 0.8));
+    color: white;
+    padding: var(--spacing-sm);
+    transform: translateY(100%);
+    transition: transform 0.3s ease;
+}
+
+.gallery-item:hover .artwork-info {
+    transform: translateY(0);
+}
+
+/* About Section */
+.about-us {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--spacing-lg);
+    align-items: center;
+    padding: var(--spacing-xl) var(--spacing-md);
+    background-color: var(--primary);
+    color: var(--light);
+}
+
+.about-content {
+    padding-right: var(--spacing-md);
+}
+
+.about-image img {
+    width: 100%;
+    height: auto;
+    border-radius: var(--radius-md);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+}
+
+/* Events Section */
+.upcoming-events {
+    padding: var(--spacing-xl) var(--spacing-md);
+    text-align: center;
+}
+
+.events-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--spacing-md);
+    margin-top: var(--spacing-md);
+}
+
+.event-card {
+    display: flex;
+    background-color: white;
+    border-radius: var(--radius-md);
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.event-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+}
+
+.event-date {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--secondary);
+    color: white;
+    padding: var(--spacing-sm) var(--spacing-md);
+    min-width: 80px;
+}
+
+.month {
+    font-size: 0.8rem;
+    font-weight: 700;
+    text-transform: uppercase;
+}
+
+.day {
+    font-size: 1.8rem;
+    font-weight: 700;
+}
+
+.event-info {
+    padding: var(--spacing-sm);
+    text-align: left;
+}
+
+.event-info h3 {
+    font-size: 1.1rem;
+    margin-bottom: 5px;
+}
+
+.event-info p {
+    font-size: 0.9rem;
+    color: var(--gray);
+}
+
+/* Exhibitions Page */
+.exhibition-filters {
+    text-align: center;
+    margin-bottom: var(--spacing-md);
+}
+
+.filter-buttons {
+    display: flex;
+    justify-content: center;
+    gap: var(--spacing-sm);
+    flex-wrap: wrap;
+}
+
+.filter-btn {
+    padding: 0.5em 1.5em;
+    background-color: transparent;
+    border: 2px solid var(--primary);
+    color: var(--primary);
+    border-radius: var(--radius-sm);
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.filter-btn:hover,
+.filter-btn.active {
+    background-color: var(--primary);
+    color: white;
+}
+
+.exhibitions-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--spacing-md);
+    padding: 0 var(--spacing-md);
+}
+
+.exhibition-card {
+    background-color: white;
+    border-radius: var(--radius-md);
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+    transition: transform 0.3s ease;
+}
+
+.exhibition-card:hover {
+    transform: translateY(-10px);
+}
+
+.exhibition-image {
+    position: relative;
+    height: 250px;
+    overflow: hidden;
+}
+
+.exhibition-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.exhibition-card:hover .exhibition-image img {
+    transform: scale(1.05);
+}
+
+.status-badge {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background-color: var(--accent);
+    color: white;
+    padding: 0.3em 1em;
+    border-radius: var(--radius-sm);
+    font-size: 0.8rem;
+    font-weight: 500;
+}
+
+.exhibition-card.current .status-badge {
+    background-color: var(--secondary);
+}
+
+.exhibition-card.upcoming .status-badge {
+    background-color: var(--accent);
+}
+
+.exhibition-card.past .status-badge {
+    background-color: var(--gray);
+}
+
+.exhibition-details {
+    padding: var(--spacing-md);
+}
+
+.exhibition-details h3 {
+    margin-bottom: 5px;
+}
+
+.date {
+    color: var(--gray);
+    font-size: 0.9rem;
+    margin-bottom: var(--spacing-sm);
+}
+
+.description {
+    margin-bottom: var(--spacing-sm);
+}
+
+/* Artists Page */
+.artists-grid {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-lg);
+    margin-bottom: var(--spacing-lg);
+}
+
+.artist-card {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: var(--spacing-md);
+    background-color: white;
+    border-radius: var(--radius-md);
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+    transition: transform 0.3s ease;
+}
+
+.artist-card:hover {
+    transform: translateY(-5px);
+}
+
+.artist-image {
+    height: 100%;
+    overflow: hidden;
+}
+
+.artist-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.artist-details {
+    padding: var(--spacing-md);
+}
+
+.specialty {
+    color: var(--secondary);
+    font-weight: 500;
+    margin-bottom: var(--spacing-sm);
+}
+
+.bio {
+    margin-bottom: var(--spacing-md);
+}
+
+.mini-gallery {
+    display: flex;
+    gap: 10px;
+    margin-bottom: var(--spacing-sm);
+}
+
+.mini-gallery img {
+    width: 80px;
+    height: 80px;
+    object-fit: cover;
+    border-radius: var(--radius-sm);
+    transition: transform 0.3s ease;
+}
+
+.mini-gallery img:hover {
+    transform: scale(1.1);
+}
+
+/* Call to Action Section */
+.call-to-action {
+    background-color: var(--primary);
+    color: var(--light);
+    text-align: center;
+    padding: var(--spacing-xl) var(--spacing-md);
+    margin-top: var(--spacing-xl);
+}
+
+.cta-content {
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+/* Footer */
+footer {
+    background-color: var(--dark);
+    color: var(--light);
+    padding: var(--spacing-lg) var(--spacing-md) var(--spacing-md);
+}
+
+.footer-content {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--spacing-md);
+    margin-bottom: var(--spacing-lg);
+}
+
+.footer-column h3 {
+    margin-bottom: var(--spacing-sm);
+    font-size: 1.2rem;
+    color: var(--light);
+}
+
+.footer-column p {
+    font-size: 0.9rem;
+    margin-bottom: var(--spacing-xs);
+}
+
+.footer-column ul {
+    list-style: none;
+}
+
+.footer-column li {
+    margin-bottom: var(--spacing-xs);
+}
+
+.footer-column a {
+    color: var(--light);
+    opacity: 0.8;
+    transition: opacity 0.3s ease;
+}
+
+.footer-column a:hover {
+    opacity: 1;
+    color: var(--accent);
+}
+
+.social-links {
+    display: flex;
+    gap: var(--spacing-sm);
+    margin-bottom: var(--spacing-sm);
+}
+
+.social-icon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 40px;
+    height: 40px;
+    background-color: var(--primary);
+    border-radius: 50%;
+    transition: all 0.3s ease;
+    color: var(--light);
+    font-weight: 700;
+}
+
+.social-icon:hover {
+    background-color: var(--accent);
+    transform: translateY(-3px);
+}
+
+.copyright {
+    text-align: center;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    padding-top: var(--spacing-md);
+    font-size: 0.9rem;
+}
+
+/* CSS Transitions, Transformations, and Animations */
+/* 1. Transition for buttons */
+.btn {
+    transition: all 0.3s ease;
+}
+
+/* 2. Transformation for cards */
+.gallery-item:hover,
+.exhibition-card:hover,
+.artist-card:hover {
+    transform: translateY(-10px);
+}
+
+/* 3. Animation for hero text */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.hero-content h2,
+.hero-content p,
+.hero-content .btn {
+    animation: fadeInUp 1s ease-out forwards;
+    opacity: 0;
+}
+
+.hero-content h2 {
+    animation-delay: 0.3s;
+}
+
+.hero-content p {
+    animation-delay: 0.6s;
+}
+
+.hero-content .btn {
+    animation-delay: 0.9s;
+}
+
+/* Media Queries for Responsive Design */
+/* Tablet (768px - 991px) */
+@media screen and (max-width: 991px) {
+
+    .gallery-grid,
+    .events-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .about-us {
+        grid-template-columns: 1fr;
+        gap: var(--spacing-md);
+    }
+
+    .about-content {
+        padding-right: 0;
+    }
+
+    .exhibitions-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .artist-card {
+        grid-template-columns: 1fr;
+    }
+
+    .artist-image {
+        height: 300px;
+    }
+
+    .footer-content {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* Mobile (up to 767px) */
+@media screen and (max-width: 767px) {
+    .hamburger {
+        display: flex;
+    }
+
+    .nav-links {
+        position: fixed;
+        top: 70px;
+        left: 0;
+        width: 100%;
+        flex-direction: column;
+        background-color: var(--primary);
+        padding: var(--spacing-md);
+        align-items: center;
+        transform: translateY(-150%);
+        transition: transform 0.3s ease;
+        z-index: 99;
+    }
+
+    .nav-links.show {
+        transform: translateY(0);
+    }
+
+    .nav-links li {
+        margin: var(--spacing-xs) 0;
+    }
+
+    .gallery-grid,
+    .events-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .hero {
+        height: 60vh;
+    }
+
+    .hero-content h2 {
+        font-size: calc(1.5rem + 1vw);
+    }
+
+    .event-card {
+        flex-direction: column;
+    }
+
+    .event-date {
+        padding: var(--spacing-xs);
+        flex-direction: row;
+        gap: var(--spacing-xs);
+    }
+
+    .footer-content {
+        grid-template-columns: 1fr;
+        gap: var(--spacing-md);
+    }
+}
+
+/* Small Mobile (up to 480px) */
+@media screen and (max-width: 480px) {
+    .hero {
+        height: 50vh;
+    }
+
+    section {
+        padding: var(--spacing-md) var(--spacing-sm);
+        margin-bottom: var(--spacing-md);
+    }
+
+    .mini-gallery {
+        gap: 5px;
+    }
+
+    .mini-gallery img {
+        width: 60px;
+        height: 60px;
+    }
+}
